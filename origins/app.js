@@ -7424,7 +7424,7 @@
                     var n = t.targetTouches ? t.targetTouches[0] : t;
                     e.touchStartY = n.pageY
                 })), H(this, "touchMove", (function (t) {
-                    var n = e.opts.tm,
+                    var n = e.opts.tm * 0.1,
                         i = e.evt,
                         r = t.targetTouches ? t.targetTouches[0] : t;
                     i.deltaY = (r.pageY - e.touchStartY) * n, e.touchStartY = r.pageY, e.notify(t)
