@@ -179,8 +179,11 @@
     #liveVideoFrame{
         height: 50vh;
     }
+    .agenda-page{
+        width: 99% !important;
+    }
     .agenda-page>*{
-        width: 98vw;
+        width: 98vw !important;
     }
     .agenda-page>*>*{
         width: 98vw !important;
