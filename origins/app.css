@@ -160,7 +160,7 @@ template {
 @font-face {
     font-family: audi;
     font-display: swap;
-    src: url(2020/static/fonts/AudiType-ExtendedNormal_4.03.woff2) format("woff2");
+    src: url(/2020/static/fonts/AudiType-ExtendedNormal_4.03.woff2) format("woff2");
     font-weight: 500;
     font-style: normal
 }
@@ -168,7 +168,7 @@ template {
 @font-face {
     font-family: audi;
     font-display: swap;
-    src: url(2020/static/fonts/AudiType-ExtendedBold_4.03.woff2) format("woff2");
+    src: url(/2020/static/fonts/AudiType-ExtendedBold_4.03.woff2) format("woff2");
     font-weight: 700;
     font-style: normal
 }
@@ -176,7 +176,7 @@ template {
 @font-face {
     font-family: audi;
     font-display: swap;
-    src: url(2020/static/fonts/AudiTypeScreen-Light.woff2) format("woff2");
+    src: url(/2020/static/fonts/AudiTypeScreen-Light.woff2) format("woff2");
     font-weight: 300;
     font-style: normal
 }
