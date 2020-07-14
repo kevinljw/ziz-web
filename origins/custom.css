@@ -202,8 +202,32 @@
     .p-icon-0{
         left: -4vw;
         width: 35vw;
+        margin-top: -20vw;
     }
-    
+    .p-icon-1 {
+    left: -9vw;
+    width: 30vw;
+    }
+    .p-icon-2 {
+    top: 250px;
+    right: 1vw;
+    width: 15vw;
+    }
+    .p-icon-3 {
+    top: 2030px;
+    right: 1vw;
+    width: 25vw;
+    }
+    .p-icon-4 {
+    top: 2100px;
+    left: -16vw;
+    width: 60vw;
+    }
+    .p-icon-5 {
+    bottom: 800px;
+    right: -10vw;
+    width: 70vw;
+    }
 }
 @media (min-width: 650px){
     .agenda-page {
