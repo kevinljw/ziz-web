@@ -129,6 +129,11 @@
     
     z-index: -1;
 }
+.p-icon-0{
+    left: 4vw;
+    width: 16vw;
+    margin-top: 1vw;
+}
 .p-icon-1{
     left: 0px;
     top: 150px;
@@ -157,6 +162,9 @@
 .w90{
    width: 90vw; 
 }
+.intro__content h3{
+    line-height: 1.4em;
+}
 @media (max-width: 651px){
     .desktop-only {
         display: none !important;
@@ -172,10 +180,10 @@
         height: 50vh;
     }
     .agenda-page>*{
-        width: 95vw;
+        width: 98vw;
     }
     .agenda-page>*>*{
-        width: 100% !important;
+        width: 98vw !important;
     }
     .agenda-page .time, .agenda-page .mins,.agenda-page .activity{
         font-size: 1.1rem;
@@ -183,6 +191,10 @@
     .header-page .header-text{
         width: 80vw;
         font-size: 5.4vw;
+    }
+    .intro__content h3{
+        text-align: center;
+        font-size: 5vw;
     }
     
 }
