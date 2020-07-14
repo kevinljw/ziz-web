@@ -180,16 +180,16 @@
         height: 50vh;
     }
     .agenda-page{
-        width: 99% !important;
+        width: 100% !important;
     }
     .agenda-page>*{
-        width: 98vw !important;
+        width: 100%  !important;
     }
     .agenda-page>*>*{
-        width: 98vw !important;
+        width: 100%  !important;
     }
     .agenda-page .time, .agenda-page .mins,.agenda-page .activity{
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
     .header-page .header-text{
         width: 80vw;
