@@ -84,7 +84,7 @@
 }
 .vm{
     visibility: visible;
-    background: url("/2020/static/3BG-web.png");
+    background: url("2020/static/3BG-web.png");
     background-size: cover;
     background-position: center;
     z-index: 3;
@@ -165,7 +165,7 @@
         font-size: 2.5em;
     }
     .vm{
-        background: url("/2020/static/11Mobile-BG.png");
+        background: url("2020/static/11Mobile-BG.png");
         background-size: cover;
     }
     #liveVideoFrame{
@@ -197,6 +197,6 @@
         display: none !important;
     }
     .vm{
-        background: url("/2020/static/3BG-web.png");
+        background: url("2020/static/3BG-web.png");
     }
 }
