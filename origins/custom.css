@@ -37,7 +37,6 @@
     border-radius: 4rem;
     line-height: 2rem;
 }
-
 .agenda-page .content{
     font-size: 1.3rem;
     line-height: 2em;
@@ -242,4 +241,5 @@
     .vm{
         background: url("/2020/static/3BG-web.png");
     }
+   
 }
