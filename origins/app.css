@@ -180,7 +180,13 @@ template {
     font-weight: 300;
     font-style: normal
 }
-
+@font-face {
+    font-family: audi;
+    font-display: swap;
+    src: url(/2020/static/fonts/AudiType-ExtendedItalic_4.03.woff2) format("woff2");
+    font-weight: 500;
+    font-style: italic;
+}
 :root {
     --size: 440;
     --max-width: calc(100vw - 3.5rem);

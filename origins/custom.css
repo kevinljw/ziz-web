@@ -3,7 +3,10 @@
     color: #000;
     font-family: audi;
 }
-
+.hero-progress{
+    top: 27vh;
+    top: calc(100% + 10rem);
+}
 .agenda-page{
     box-sizing: content-box;
     height: 60vh;
@@ -163,6 +166,11 @@
 }
 .intro__content h3{
     line-height: 1.4em;
+}
+.text-italic{
+    font-family: audi;
+    font-style: italic;
+    font-size: 0.5em;
 }
 @media (max-width: 651px){
     .desktop-only {
