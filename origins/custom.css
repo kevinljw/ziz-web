@@ -227,6 +227,14 @@
     right: -10vw;
     width: 70vw;
     }
+    .agenda-page{
+        height: 70vh;
+        transform: translate(0px, -45%);
+    }
+    .hero-progress{
+        top: 40vh;
+        top: calc(100% + 14rem);
+    }
 }
 @media (min-width: 650px){
     .agenda-page {
