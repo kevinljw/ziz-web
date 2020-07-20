@@ -7396,11 +7396,16 @@
                     var n = t.targetTouches ? t.targetTouches[0] : t;
                     e.touchStartY = n.pageY
                 })), H(this, "touchMove", (function (t) {
-                    var n = e.opts.tm*0.3,
+                    var n = e.opts.tm,
                         i = e.evt,
                         r = t.targetTouches ? t.targetTouches[0] : t;
-//                    console.log(r.pageY - e.touchStartY, r.pageY , e.touchStartY);    
-                    i.deltaY = (r.pageY - e.touchStartY) * n, e.touchStartY = r.pageY, e.notify(t);
+//                    console.log((r.pageY - e.touchStartY) * n);
+                    var tmpIY = (r.pageY - e.touchStartY) * n;
+                    var tv = 2;
+                    if(tmpIY>tv || tmpIY<-tv){
+                        tmpIY = Math.sign(tmpIY)*tv;
+                    }
+                    i.deltaY = tmpIY, e.touchStartY = r.pageY, e.notify(t);
 //                    console.log(i.deltaY);
                 })), H(this, "keyDown", (function (t) {
                     if ("INPUT" !== document.activeElement.nodeName) {
