@@ -1916,30 +1916,6 @@
                     return t.setAttribute("type", "matrix"), t.setAttribute("color-interpolation-filters", "sRGB"), t.setAttribute("values", "0 0 0 1 0  0 0 0 1 0  0 0 0 1 0  0 0 0 1 1"), t
                 }, t
             }();
-//        ,
-//            assetLoader = function () {
-//                function t(t) {
-//                    return t.response && "object" == typeof t.response ? t.response : t.response && "string" == typeof t.response ? JSON.parse(t.response) : t.responseText ? JSON.parse(t.responseText) : void 0
-//                }
-//                return {
-//                    load: function (e, n, i) {
-//                        var r, a = new XMLHttpRequest;
-//                        a.open("GET", e, !0);
-//                        try {
-//                            a.responseType = "json"
-//                        } catch (t) {}
-//                        a.send(), a.onreadystatechange = function () {
-//                            if (4 == a.readyState)
-//                                if (200 == a.status) r = t(a), n(r);
-//                                else try {
-//                                    r = t(a), n(r)
-//                                } catch (t) {
-//                                    i && i(t)
-//                                }
-//                        }
-//                    }
-//                }
-//            }();
 
         function TextAnimatorProperty(t, e, n) {
             this._isFirstFrame = !0, this._hasMaskedPath = !1, this._frameId = -1, this._textData = t, this._renderType = e, this._elem = n, this._animatorsData = createSizedArray(this._textData.a.length), this._pathData = {}, this._moreOptions = {
@@ -4495,10 +4471,6 @@
                     this.renderer = new HybridRenderer(this, t.rendererSettings)
             }
             this.renderer.setProjectInterface(this.projectInterface), this.animType = e, "" === t.loop || null === t.loop || (!1 === t.loop ? this.loop = !1 : !0 === t.loop ? this.loop = !0 : this.loop = parseInt(t.loop)), this.autoplay = !("autoplay" in t) || t.autoplay, this.name = t.name ? t.name : "", this.autoloadSegments = !t.hasOwnProperty("autoloadSegments") || t.autoloadSegments, this.assetsPath = t.assetsPath, this.initialSegment = t.initialSegment, t.animationData ? this.configAnimation(t.animationData) : t.path && (-1 !== t.path.lastIndexOf("\\") ? this.path = t.path.substr(0, t.path.lastIndexOf("\\") + 1) : this.path = t.path.substr(0, t.path.lastIndexOf("/") + 1), this.fileName = t.path.substr(t.path.lastIndexOf("/") + 1), this.fileName = this.fileName.substr(0, this.fileName.lastIndexOf(".json"))
-            
-//            , assetLoader.load(t.path, this.configAnimation.bind(this), function () {
-//                this.trigger("data_failed")
-//            }.bind(this))
             )
         }, AnimationItem.prototype.setData = function (t, e) {
             var n = {
@@ -7419,16 +7391,17 @@
                         i = n.mm,
                         r = n.fm,
                         a = e.evt;
-                    a.deltaY = t.wheelDeltaY || -1 * t.deltaY, tt && 1 == t.deltaMode && (a.deltaY *= r), a.deltaY *= i, e.notify(t)
+                    a.deltaY = 0.7 * t.wheelDeltaY || -0.7 * t.deltaY, tt && 1 == t.deltaMode && (a.deltaY *= r), a.deltaY *= i, e.notify(t)
                 })), H(this, "touchStart", (function (t) {
                     var n = t.targetTouches ? t.targetTouches[0] : t;
                     e.touchStartY = n.pageY
                 })), H(this, "touchMove", (function (t) {
-                    var n = e.opts.tm,
+                    var n = e.opts.tm*0.3,
                         i = e.evt,
                         r = t.targetTouches ? t.targetTouches[0] : t;
-                        n = n/10;
-                    i.deltaY = (r.pageY - e.touchStartY) * n, e.touchStartY = r.pageY, e.notify(t)
+//                    console.log(r.pageY - e.touchStartY, r.pageY , e.touchStartY);    
+                    i.deltaY = (r.pageY - e.touchStartY) * n, e.touchStartY = r.pageY, e.notify(t);
+//                    console.log(i.deltaY);
                 })), H(this, "keyDown", (function (t) {
                     if ("INPUT" !== document.activeElement.nodeName) {
                         var n = e.evt,
@@ -19073,138 +19046,6 @@
             writable: !0
         }) : t[e] = n, t
     }
-//    var xc = g.flags,
-//        bc = function () {
-//            function t() {
-//                var e = this;
-//                ! function (t, e) {
-//                    if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function")
-//                }(this, t), _c(this, "ui", {}), _c(this, "run", (function () {
-//                    var t = e.state,
-//                        n = t.target - t.current;
-//                    !t.dragging && Math.abs(n) <= .001 || (t.current += n * e.opts.ease, t.rounded = Math.round(100 * t.current) / 100, t.progress = t.rounded / t.max, !t.resizing && e.transform())
-//                })), _c(this, "down", (function (t) {
-//                    var n = t.x,
-//                        i = t.y;
-//                    if (t.target.closest(".js-pricing-draggable")) {
-//                        var r = e.state;
-//                        xc.dragging = !0, r.dragging = !0, r.cancel.x = n, r.cancel.y = i, r.on = r.target + n * e.opts.speed, !e.initial && e.removeCTA()
-//                    }
-//                })), _c(this, "move", (function (t) {
-//                    var n = t.x,
-//                        i = t.y,
-//                        r = t.e,
-//                        a = e.state;
-//                    if (a.dragging) {
-//                        var s = a.cancel;
-//                        Math.abs(n - s.x) > Math.abs(i - s.y) && r.cancelable && (r.preventDefault(), r.stopPropagation()), a.target = a.on - n * e.opts.speed, e.clamp()
-//                    }
-//                })), _c(this, "up", (function () {
-//                    xc.dragging = !1, e.state.dragging = !1
-//                })), _c(this, "click", (function (t) {
-//                    var n = t.target.closest(".js-pricing-bullet");
-//                    if (n) {
-//                        var i = e.state;
-//                        i.target = i.snap[e.ui.bullets.indexOf(n)]
-//                    }
-//                })), _c(this, "resize", (function () {
-//                    var t = e.state;
-//                    t.resizing = !0, e.setBounds(), e.setScale(), e.clamp(), t.rounded = t.current = t.target, e.transform(), t.resizing = !1
-//                })), this.el = y(".js-pricing"), this.ui.container = y(".js-pricing-slides"), this.ui.slides = gc(_(".js-pricing-slide")), this.ui.bullets = gc(_(".js-pricing-bullet")), this.ui.handle = y(".js-pricing-handle"), this.state = {
-//                    target: 0,
-//                    current: 0,
-//                    rounded: 0,
-//                    scale: 0,
-//                    on: 0,
-//                    max: 0,
-//                    cancel: {
-//                        x: 0,
-//                        y: 0
-//                    },
-//                    dragging: !1,
-//                    resizing: !1,
-//                    snap: null
-//                }, this.opts = {
-//                    speed: 2,
-//                    ease: .085
-//                }, this.init()
-//            }
-//            var e, n, i;
-//            return e = t, (n = [{
-//                key: "init",
-//                value: function () {
-//                    this.setBounds(), this.addEvents()
-//                }
-//            }, {
-//                key: "addEvents",
-//                value: function () {
-//                    U.on("tick", this.run), U.on("mousedown", this.down), U.on("mouseup", this.up), U.on("mousemove", this.move), U.on("click", this.click), U.on("resize", this.resize)
-//                }
-//            }, {
-//                key: "setBounds",
-//                value: function () {
-//                    var t = this,
-//                        e = this.ui,
-//                        n = e.slides,
-//                        i = e.container,
-//                        r = g.bounds.ww;
-//                    i.style.transform = "translate3d(0, 0, 0)";
-//                    var a = r - x(i).right;
-//                    this.state.max = x(n[n.length - 1]).right + a - r, this.state.snap = n.map((function (e, i) {
-//                        return t.state.max / (n.length - 1) * i
-//                    })), this.setScale()
-//                }
-//            }, {
-//                key: "setScale",
-//                value: function () {
-//                    var t = this.ui.bullets,
-//                        e = this.state,
-//                        n = x(t[2]).left - x(t[0]).left;
-//                    e.scale = e.max / n
-//                }
-//            }, {
-//                key: "transform",
-//                value: function () {
-//                    var t = this.ui,
-//                        e = t.container,
-//                        n = t.handle,
-//                        i = this.state,
-//                        r = i.rounded,
-//                        a = i.scale;
-//                    e.style.transform = "translate3d(".concat(-r, "px, 0, 0)"), n.style.transform = "translate3d(".concat(r / a, "px, 0, 0)")
-//                }
-//            }, {
-//                key: "removeCTA",
-//                value: function () {
-//                    this.initial = !0;
-//                    var t = y(".js-btn-next", this.el);
-//                    vr.to(t, {
-//                        alpha: 0,
-//                        duration: .35,
-//                        ease: "power1",
-//                        onComplete: function () {
-//                            return t.remove()
-//                        }
-//                    })
-//                }
-//            }, {
-//                key: "clamp",
-//                value: function () {
-//                    var t = this.state;
-//                    t.target = vr.utils.clamp(0, t.max, t.target)
-//                }
-//            }, {
-//                key: "removeEvents",
-//                value: function () {
-//                    U.off("tick", this.run), U.off("mousedown", this.down), U.off("mouseup", this.up), U.off("mousemove", this.move), U.off("resize", this.resize), U.off("click", this.click)
-//                }
-//            }, {
-//                key: "destroy",
-//                value: function () {
-//                    this.removeEvents(), this.state = null, this.opts = null, this.ui = null
-//                }
-//            }]) && yc(e.prototype, n), i && yc(e, i), t
-//        }();
 
     function Ec(t) {
         return function (t) {
@@ -20145,29 +19986,7 @@
                         o = i - a.x;
                     Math.abs(o) <= .001 || (a.x += .1 * o, a.scale += .1 * (r - a.scale), !s && e.transformLine(a.x, a.scale))
                 })), ap(this, "handle", (function (t) {
-//                    t.forEach((function (t) {
-//                        var n = e.cache && e.cache.menu.find((function (e) {
-//                            return e.elem === t.target
-//                        }));
-//                        if (n) {
-//                            var i = n.el,
-//                                r = n.i,
-//                                a = n.x,
-//                                s = n.scaleX;
-//                            if (t.isIntersecting) {
-//                                var o = e.state;
-//                                o.last && o.last.classList.remove("is-active"), o.i = r, e.line(a, s), i.classList.add("is-active"), o.last = i
-//                            }
-//                        } else {
-//                            var l = e.cache.hiw.find((function (e) {
-//                                return e.elem === t.target
-//                            })).el;
-//                            if (t.isIntersecting) {
-//                                var h = e.state.hiw;
-//                                h.last && h.last.classList.remove("is-active"), l.classList.add("is-active"), h.last = l
-//                            }
-//                        }
-//                    }))
+
                 })), ap(this, "anchorScroll", (function () {
                     var t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : null;
                     t && t.preventDefault();
@@ -20513,7 +20332,6 @@
                     }
                 })), Rp(this, "enter", (function (t) {
                     var n = t.currentTarget;
-//                    e.cache[e.ui.elems.indexOf(n)].a.goToAndPlay(1)
                 })), Rp(this, "close", (function () {
                     e.state.open = !1;
                     var t = e.ui,
@@ -20536,7 +20354,6 @@
             return e = t, (n = [{
                 key: "init",
                 value: function () {
-//                    this.setCache(), 
                     this.addEvents()
                 }
             }, {
@@ -21171,11 +20988,7 @@
                 value: function () {
                     df(_f(a.prototype), "onLeave", this).call(this), this.stickies && this.stickies.destroy(), this.hiw && this.hiw.destroy(), this.pricing && this.pricing.destroy(), this.proof && this.proof.destroy()
                 }
-//            }, {
-//                key: "onEnterCompleted",
-//                value: function () {
-//                    df(_f(a.prototype), "onEnterCompleted", this).call(this), !Ef && (this.stickies = new Ac, this.hiw = new qp), this.pricing = new bc, this.proof = new Uc
-//                }
+
             }, {
                 key: "onLeaveCompleted",
                 value: function () {
