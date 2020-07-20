@@ -7396,12 +7396,12 @@
                     var n = t.targetTouches ? t.targetTouches[0] : t;
                     e.touchStartY = n.pageY
                 })), H(this, "touchMove", (function (t) {
-                    var n = e.opts.tm,
+                    var n = e.opts.tm*0.2,
                         i = e.evt,
                         r = t.targetTouches ? t.targetTouches[0] : t;
 //                    console.log((r.pageY - e.touchStartY) * n);
                     var tmpIY = (r.pageY - e.touchStartY) * n;
-                    var tv = 2;
+                    var tv = 0.9;
                     if(tmpIY>tv || tmpIY<-tv){
                         tmpIY = Math.sign(tmpIY)*tv;
                     }
