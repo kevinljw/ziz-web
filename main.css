@@ -5479,7 +5479,7 @@ img {
 
     .hero-progress {
         top: 40vh;
-        top: calc(100% + 5rem);
+        top: calc(100% + 3rem);
     }
     #jury-start{
         margin-top: 100vh;
